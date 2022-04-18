@@ -1,0 +1,862 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>絶対に負けられない戦いがそこにはある</title>
+</head>
+
+<body>
+    <header>
+        <button button id="initial" class='secList'>
+            絶対に負けられない戦いがそこにはある
+        </button>
+    </header>
+    <!-- 初期画面 -->
+    <div class="initial section">
+        <div class="scorebord">
+            <!-- スコアボード -->
+            <table class="Score">
+                <tr>
+                    <th class="name">対戦カード</th>
+                    <th class="Goal">1</th>
+                    <th class="Goal">2</th>
+                    <th class="Goal">3</th>
+                </tr>
+                <tr>
+                    <td class="name">日本代表</td>
+                    <td id="mR1_0" class="Goal"></td>
+                    <td id="mR2_0" class="Goal"></td>
+                    <td id="mR3_0" class="Goal"></td>
+                </tr>
+                <tr>
+                    <td class="name">COM</td>
+                    <td id="cR1_0" class="Goal"></td>
+                    <td id="cR2_0" class="Goal"></td>
+                    <td id="cR3_0" class="Goal"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="start">
+            <!-- STARTボタン -->
+            <div id="start_btn">
+                <button button id="choice_turn_k1" class='secList'>試合開始</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 選択画面 -->
+    <div class="choice_turn_k1 section">
+        <div class="choice_div">
+            <!-- キッカー選択肢 -->
+            <div class="choice_txt">
+                <p>どこを狙いますか？</p>
+            </div>
+            <div class="signal">
+                <div class="choice">
+                    <p>右か</p>
+                    <img src="/ジャンケン用画像/choice_0.JPG" class="choice_img" onclick="onClickPlayerIcon1(this)" />
+                </div>
+                <div class="choice">
+                    <p>真ん中か</p>
+                    <img src="/ジャンケン用画像/choice_1.JPG" class="choice_img" onclick="onClickPlayerIcon1(this)" />
+                </div>
+                <div class="choice">
+                    <p>左か</p>
+                    <img src="/ジャンケン用画像/choice_2.JPG" class="choice_img" onclick="onClickPlayerIcon1(this)" />
+                </div>
+            </div>
+        </div>
+        <div class="waiting">
+            <img src="/ジャンケン用画像/kicker_0.JPG" width="400">
+        </div>
+        <div class="whistle">
+            <!-- ホイッスルボタン -->
+            <div id="whistle_btn">
+                <button id="result_k1" class='secList'>ホイッスル</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 結果画面 -->
+    <div class="result_k1 section">
+        <div id="result_k1_pic" class="result_pic">
+        </div>
+        <div class="next">
+            <!-- 次へルボタン -->
+            <div id="next_btn">
+                <button id="result_all1" class='secList'>次へ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- スコア画面 k -->
+    <div class="result_all1 section">
+        <div class="scorebord">
+            <!-- スコアボード -->
+            <table class="Score">
+                <tr>
+                    <th class="name">対戦カード</th>
+                    <th class="Goal">1</th>
+                    <th class="Goal">2</th>
+                    <th class="Goal">3</th>
+                </tr>
+                <tr>
+                    <td class="name">日本代表</td>
+                    <td id="mR1_1" class="Goal"></td>
+                    <td id="mR2_1" class="Goal"></td>
+                    <td id="mR3_1" class="Goal"></td>
+                </tr>
+                <tr>
+                    <td class="name">COM</td>
+                    <td id="cR1_1" class="Goal"></td>
+                    <td id="cR2_1" class="Goal"></td>
+                    <td id="cR3_1" class="Goal"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="next">
+            <!-- 次へボタン -->
+            <div id="next_btn">
+                <button id="choice_turn_g1" class='secList'>次へ</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 選択画面 -->
+    <div class="choice_turn_g1 section">
+        <div class="choice_div">
+            <!-- ゴールキーパー選択肢 -->
+            <div class="choice_txt">
+                <p>どちらに飛びます？</p>
+            </div>
+            <div class="signal">
+                <div class="choice">
+                    <p>右か</p>
+                    <img src="/ジャンケン用画像/choice_0.JPG" class="choice_img" onclick="onClickPlayerIcon2(this)" />
+                </div>
+                <div class="choice">
+                    <p>真ん中か</p>
+                    <img src="/ジャンケン用画像/choice_1.JPG" class="choice_img" onclick="onClickPlayerIcon2(this)" />
+                </div>
+                <div class="choice">
+                    <p>左か</p>
+                    <img src="/ジャンケン用画像/choice_2.JPG" class="choice_img" onclick="onClickPlayerIcon2(this)" />
+                </div>
+            </div>
+        </div>
+        <div class="waiting">
+            <img src="/ジャンケン用画像/keeper_0.JPG" alt="waiting" width="400">
+        </div>
+        <div class="whistle">
+            <!-- ホイッスルボタン -->
+            <div id="whistle_btn">
+                <button id="result_g1" class='secList'>ホイッスル</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 結果画面 -->
+    <div class="result_g1 section">
+        <div id="result_g1_pic" class="result_pic">
+        </div>
+        <div class="next">
+            <!-- 次へルボタン -->
+            <div id="next_btn">
+                <button id="result_all1_2" class='secList'>次へ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- スコア画面 g-->
+    <div class="result_all1_2 section">
+        <div class="scorebord">
+            <!-- スコアボード -->
+            <table class="Score">
+                <tr>
+                    <th class="name">対戦カード</th>
+                    <th class="Goal">1</th>
+                    <th class="Goal">2</th>
+                    <th class="Goal">3</th>
+                </tr>
+                <tr>
+                    <td class="name">日本代表</td>
+                    <td id="mR1_2" class="Goal"></td>
+                    <td id="mR2_2" class="Goal"></td>
+                    <td id="mR3_2" class="Goal"></td>
+                </tr>
+                <tr>
+                    <td class="name">COM</td>
+                    <td id="cR1_2" class="Goal"></td>
+                    <td id="cR2_2" class="Goal"></td>
+                    <td id="cR3_2" class="Goal"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="next">
+            <!-- 次へボタン -->
+            <div id="next_btn">
+                <button id="choice_turn_k2" class='secList'>次へ</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 2ターン目 -->
+    <!-- 選択画面 -->
+    <div class="choice_turn_k2 section">
+        <div class="choice_div">
+            <!-- キッカー選択肢 -->
+            <div class="choice_txt">
+                <p>どこを狙いますか？</p>
+            </div>
+            <div class="signal">
+                <div class="choice">
+                    <p>右か</p>
+                    <img src="/ジャンケン用画像/choice_0.JPG" class="choice_img" onclick="onClickPlayerIcon3(this)" />
+                </div>
+                <div class="choice">
+                    <p>真ん中か</p>
+                    <img src="/ジャンケン用画像/choice_1.JPG" class="choice_img" onclick="onClickPlayerIcon3(this)" />
+                </div>
+                <div class="choice">
+                    <p>左か</p>
+                    <img src="/ジャンケン用画像/choice_2.JPG" class="choice_img" onclick="onClickPlayerIcon3(this)" />
+                </div>
+            </div>
+        </div>
+        <div class="waiting">
+            <img src="/ジャンケン用画像/kicker_0.JPG" alt="waiting" width="400">
+        </div>
+        <div class="whistle">
+            <!-- ホイッスルボタン -->
+            <div id="whistle_btn">
+                <button id="result_k2" class='secList'>ホイッスル</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 結果画面 -->
+    <div class="result_k2 section">
+        <div id="result_k2_pic" class="result_pic">
+        </div>
+        <div class="next">
+            <!-- 次へルボタン -->
+            <div id="next_btn">
+                <button id="result_all2" class='secList'>次へ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- スコア画面 k -->
+    <div class="result_all2 section">
+        <div class="scorebord">
+            <!-- スコアボード -->
+            <table class="Score">
+                <tr>
+                    <th class="name">対戦カード</th>
+                    <th class="Goal">1</th>
+                    <th class="Goal">2</th>
+                    <th class="Goal">3</th>
+                </tr>
+                <tr>
+                    <td class="name">日本代表</td>
+                    <td id="mR1_3" class="Goal"></td>
+                    <td id="mR2_3" class="Goal"></td>
+                    <td id="mR3_3" class="Goal"></td>
+                </tr>
+                <tr>
+                    <td class="name">COM</td>
+                    <td id="cR1_3" class="Goal"></td>
+                    <td id="cR2_3" class="Goal"></td>
+                    <td id="cR3_3" class="Goal"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="next">
+            <!-- 次へボタン -->
+            <div id="next_btn">
+                <button id="choice_turn_g2" class='secList'>次へ</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 選択画面 -->
+    <div class="choice_turn_g2 section">
+        <div class="choice_div">
+            <!-- ゴールキーパー選択肢 -->
+            <div class="choice_txt">
+                <p>どちらに飛びます？</p>
+            </div>
+            <div class="signal">
+                <div class="choice">
+                    <p>右か</p>
+                    <img src="/ジャンケン用画像/choice_0.JPG" class="choice_img" onclick="onClickPlayerIcon4(this)" />
+                </div>
+                <div class="choice">
+                    <p>真ん中か</p>
+                    <img src="/ジャンケン用画像/choice_1.JPG" class="choice_img" onclick="onClickPlayerIcon4(this)" />
+                </div>
+                <div class="choice">
+                    <p>左か</p>
+                    <img src="/ジャンケン用画像/choice_2.JPG" class="choice_img" onclick="onClickPlayerIcon4(this)" />
+                </div>
+            </div>
+        </div>
+        <div class="waiting">
+            <img src="/ジャンケン用画像/keeper_0.JPG" alt="waiting" width="400">
+        </div>
+        <div class="whistle">
+            <!-- ホイッスルボタン -->
+            <div id="whistle_btn">
+                <button id="result_g2" class='secList'>ホイッスル</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 結果画面 -->
+    <div class="result_g2 section">
+        <div id="result_g2_pic" class="result_pic">
+        </div>
+        <div class="next">
+            <!-- 次へルボタン -->
+            <div id="next_btn">
+                <button id="result_all2_2" class='secList'>次へ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- スコア画面 g-->
+    <div class="result_all2_2 section">
+        <div class="scorebord">
+            <!-- スコアボード -->
+            <table class="Score">
+                <tr>
+                    <th class="name">対戦カード</th>
+                    <th class="Goal">1</th>
+                    <th class="Goal">2</th>
+                    <th class="Goal">3</th>
+                </tr>
+                <tr>
+                    <td class="name">日本代表</td>
+                    <td id="mR1_4" class="Goal"></td>
+                    <td id="mR2_4" class="Goal"></td>
+                    <td id="mR3_4" class="Goal"></td>
+                </tr>
+                <tr>
+                    <td class="name">COM</td>
+                    <td id="cR1_4" class="Goal"></td>
+                    <td id="cR2_4" class="Goal"></td>
+                    <td id="cR3_4" class="Goal"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="next">
+            <!-- 次へボタン -->
+            <div id="next_btn">
+                <button id="choice_turn_k3" class='secList'>次へ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3ターン目 -->
+    <!-- 選択画面 -->
+    <div class="choice_turn_k3 section">
+        <div class="choice_div">
+            <!-- キッカー選択肢 -->
+            <div class="choice_txt">
+                <p>どこを狙いますか？</p>
+            </div>
+            <div class="signal">
+                <div class="choice">
+                    <p>右か</p>
+                    <img src="/ジャンケン用画像/choice_0.JPG" class="choice_img" onclick="onClickPlayerIcon5(this)" />
+                </div>
+                <div class="choice">
+                    <p>真ん中か</p>
+                    <img src="/ジャンケン用画像/choice_1.JPG" class="choice_img" onclick="onClickPlayerIcon5(this)" />
+                </div>
+                <div class="choice">
+                    <p>左か</p>
+                    <img src="/ジャンケン用画像/choice_2.JPG" class="choice_img" onclick="onClickPlayerIcon5(this)" />
+                </div>
+            </div>
+        </div>
+        <div class="waiting">
+            <img src="/ジャンケン用画像/kicker_0.JPG" alt="waiting" width="400">
+        </div>
+        <div class="whistle">
+            <!-- ホイッスルボタン -->
+            <div id="whistle_btn">
+                <button id="result_k3" class='secList'>ホイッスル</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 結果画面 -->
+    <div class="result_k3 section">
+        <div id="result_k3_pic" class="result_pic">
+        </div>
+        <div class="next">
+            <!-- 次へルボタン -->
+            <div id="next_btn">
+                <button id="result_all3" class='secList'>次へ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- スコア画面 k -->
+    <div class="result_all3 section">
+        <div class="scorebord">
+            <!-- スコアボード -->
+            <table class="Score">
+                <tr>
+                    <th class="name">対戦カード</th>
+                    <th class="Goal">1</th>
+                    <th class="Goal">2</th>
+                    <th class="Goal">3</th>
+                </tr>
+                <tr>
+                    <td class="name">日本代表</td>
+                    <td id="mR1_5" class="Goal"></td>
+                    <td id="mR2_5" class="Goal"></td>
+                    <td id="mR3_5" class="Goal"></td>
+                </tr>
+                <tr>
+                    <td class="name">COM</td>
+                    <td id="cR1_5" class="Goal"></td>
+                    <td id="cR2_5" class="Goal"></td>
+                    <td id="cR3_5" class="Goal"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="next">
+            <!-- 次へボタン -->
+            <div id="next_btn">
+                <button id="choice_turn_g3" class='secList'>次へ</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 選択画面 -->
+    <div class="choice_turn_g3 section">
+        <div class="choice_div">
+            <!-- ゴールキーパー選択肢 -->
+            <div class="choice_txt">
+                <p>どちらに飛びます？</p>
+            </div>
+            <div class="signal">
+                <div class="choice">
+                    <p>右か</p>
+                    <img src="/ジャンケン用画像/choice_0.JPG" class="choice_img" onclick="onClickPlayerIcon6(this)" />
+                </div>
+                <div class="choice">
+                    <p>真ん中か</p>
+                    <img src="/ジャンケン用画像/choice_1.JPG" class="choice_img" onclick="onClickPlayerIcon6(this)" />
+                </div>
+                <div class="choice">
+                    <p>左か</p>
+                    <img src="/ジャンケン用画像/choice_2.JPG" class="choice_img" onclick="onClickPlayerIcon6(this)" />
+                </div>
+            </div>
+        </div>
+        <div class="waiting">
+            <img src="/ジャンケン用画像/keeper_0.JPG" alt="waiting" width="400">
+        </div>
+        <div class="whistle">
+            <!-- ホイッスルボタン -->
+            <div id="whistle_btn">
+                <button id="result_g3" class='secList'>ホイッスル</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 結果画面 -->
+    <div class="result_g3 section">
+        <div id="result_g3_pic" class="result_pic">
+        </div>
+        <div class="next">
+            <!-- 次へルボタン -->
+            <div id="next_btn">
+                <button id="result_all3_2" class='secList'>次へ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- スコア画面 g-->
+    <div class="result_all3_2 section">
+        <div class="scorebord">
+            <!-- スコアボード -->
+            <table id="finalscore" class="Score">
+                <tr>
+                    <th class="name">対戦カード</th>
+                    <th class="Goal">1</th>
+                    <th class="Goal">2</th>
+                    <th class="Goal">3</th>
+                </tr>
+                <tr>
+                    <td class="name">日本代表</td>
+                    <td id="mR1_6" class="Goal"></td>
+                    <td id="mR2_6" class="Goal"></td>
+                    <td id="mR3_6" class="Goal"></td>
+                </tr>
+                <tr>
+                    <td class="name">COM</td>
+                    <td id="cR1_6" class="Goal"></td>
+                    <td id="cR2_6" class="Goal"></td>
+                    <td id="cR3_6" class="Goal"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="next">
+            <!-- 次へボタン -->
+            <div id="next_btn">
+                <button id="result_final" class='secList'>次へ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 最終画面 -->
+    <div class="result_final section">
+        <div id="result_final_pic" class="final">
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        //セクション遷移
+        $(function () {
+            $('.section').hide();
+
+            $('.secList').on('click', function () {
+                // クリックした要素の ID と違うクラス名のセクションを非表示
+                $('.section').not($('.' + $(this).attr('id'))).hide();
+                // クリックした要素の ID と同じクラスのセクションを表示
+                $('.' + $(this).attr('id')).show();
+
+                // toggle にすると、同じボタンを 2 回押すと非表示になる
+                // $('.'+$(this).attr('id')).toggle();
+            });
+        });
+
+
+
+        //キッカー１
+        //選択肢をクリックしたときに呼び出す
+        function onClickPlayerIcon1(self) {
+            //すでにselectのクラス値が与えられているHTMLエレメントのselectedを消去する
+            $(".selected1").each(function () {
+                $(this).toggleClass("selected1");
+            });
+            //クリックされたHTMLエレメントにselectedのクラス値を与える
+            $(self).toggleClass("selected1");
+        }
+
+
+        $("#result_k1").on("click", function () {
+            //乱数で0,1,2のどれかを作成する
+            const evalue1 = Math.floor(Math.random() * 3.0);
+            //自分の手として選択されている画像のファイル名を取得する
+            const pfilename1 = $(".selected1").attr("src");
+            //画像のファイル名から正規表現を用いて、数字の部分だけを抽出する
+            const pvalue1 = pfilename1.replace(/[^0-9]/g, '');
+            //数字の引き算によって勝敗を判別する
+            const result1 = (pvalue1 - evalue1);
+            //結果に因って画像を出しわける
+            if (result1 === 0) {
+                $("#result_k1_pic").append('<img src="/ジャンケン用画像/kicker_2.JPG" width="400">');
+            } else {
+                $("#result_k1_pic").append('<img src="/ジャンケン用画像/kicker_1.JPG" width="400">');
+            }
+            //結果を格納する
+            if (result1 === 0) {
+                $("#mR1_1").text("×");
+                $("#mR1_2").text("×");
+                $("#mR1_3").text("×");
+                $("#mR1_4").text("×");
+                $("#mR1_5").text("×");
+                $("#mR1_6").text("×");
+            } else {
+                $("#mR1_1").text("〇");
+                $("#mR1_2").text("〇");
+                $("#mR1_3").text("〇");
+                $("#mR1_4").text("〇");
+                $("#mR1_5").text("〇");
+                $("#mR1_6").text("〇");
+            }
+        });
+
+        //キーパー１
+        //選択肢をクリックしたときに呼び出す
+        function onClickPlayerIcon2(self) {
+            //すでにselectのクラス値が与えられているHTMLエレメントのselectedを消去する
+            $(".selected2").each(function () {
+                $(this).toggleClass("selected2");
+            });
+            //クリックされたHTMLエレメントにselectedのクラス値を与える
+            $(self).toggleClass("selected2");
+        }
+
+        $("#result_g1").on("click", function () {
+            //乱数で0,1,2のどれかを作成する
+            const evalue2 = Math.floor(Math.random() * 3.0);
+            //自分の手として選択されている画像のファイル名を取得する
+            const pfilename2 = $(".selected2").attr("src");
+            //画像のファイル名から正規表現を用いて、数字の部分だけを抽出する
+            const pvalue2 = pfilename2.replace(/[^0-9]/g, '');
+            //数字の引き算によって勝敗を判別する
+            const result2 = (pvalue2 - evalue2);
+            //結果に因って画像を出しわける
+            if (result2 === 0) {
+                $("#result_g1_pic").append('<img src="/ジャンケン用画像/keeper_1.JPG" width="400">');
+            } else {
+                $("#result_g1_pic").append('<img src="/ジャンケン用画像/keeper_2.JPG" width="400">');
+            }
+            //結果を格納する
+            if (result2 === 0) {
+                $("#cR1_1").text("×");
+                $("#cR1_2").text("×");
+                $("#cR1_3").text("×");
+                $("#cR1_4").text("×");
+                $("#cR1_5").text("×");
+                $("#cR1_6").text("×");
+            } else {
+                $("#cR1_1").text("〇");
+                $("#cR1_2").text("〇");
+                $("#cR1_3").text("〇");
+                $("#cR1_4").text("〇");
+                $("#cR1_5").text("〇");
+                $("#cR1_6").text("〇");
+            }
+        });
+
+        //キッカー２
+        //選択肢をクリックしたときに呼び出す
+        function onClickPlayerIcon3(self) {
+            //すでにselectのクラス値が与えられているHTMLエレメントのselectedを消去する
+            $(".selected3").each(function () {
+                $(this).toggleClass("selected3");
+            });
+            //クリックされたHTMLエレメントにselectedのクラス値を与える
+            $(self).toggleClass("selected3");
+        }
+
+
+        $("#result_k2").on("click", function () {
+            //乱数で0,1,2のどれかを作成する
+            const evalue3 = Math.floor(Math.random() * 3.0);
+            //自分の手として選択されている画像のファイル名を取得する
+            const pfilename3 = $(".selected3").attr("src");
+            //画像のファイル名から正規表現を用いて、数字の部分だけを抽出する
+            const pvalue3 = pfilename3.replace(/[^0-9]/g, '');
+            //数字の引き算によって勝敗を判別する
+            const result3 = (pvalue3 - evalue3);
+            //結果に因って画像を出しわける
+            if (result3 === 0) {
+                $("#result_k2_pic").append('<img src="/ジャンケン用画像/kicker_2.JPG" width="400">');
+            } else {
+                $("#result_k2_pic").append('<img src="/ジャンケン用画像/kicker_1.JPG" width="400">');
+            }
+            //結果を格納する
+            if (result3 === 0) {
+                $("#mR2_1").text("×");
+                $("#mR2_2").text("×");
+                $("#mR2_3").text("×");
+                $("#mR2_4").text("×");
+                $("#mR2_5").text("×");
+                $("#mR2_6").text("×");
+            } else {
+                $("#mR2_1").text("〇");
+                $("#mR2_2").text("〇");
+                $("#mR2_3").text("〇");
+                $("#mR2_4").text("〇");
+                $("#mR2_5").text("〇");
+                $("#mR2_6").text("〇");
+            }
+        });
+
+        //キーパー２
+        //選択肢をクリックしたときに呼び出す
+        function onClickPlayerIcon4(self) {
+            //すでにselectのクラス値が与えられているHTMLエレメントのselectedを消去する
+            $(".selected4").each(function () {
+                $(this).toggleClass("selected4");
+            });
+            //クリックされたHTMLエレメントにselectedのクラス値を与える
+            $(self).toggleClass("selected4");
+        }
+
+        $("#result_g2").on("click", function () {
+            //乱数で0,1,2のどれかを作成する
+            const evalue4 = Math.floor(Math.random() * 3.0);
+            //自分の手として選択されている画像のファイル名を取得する
+            const pfilename4 = $(".selected4").attr("src");
+            //画像のファイル名から正規表現を用いて、数字の部分だけを抽出する
+            const pvalue4 = pfilename4.replace(/[^0-9]/g, '');
+            //数字の引き算によって勝敗を判別する
+            const result4 = (pvalue4 - evalue4);
+            //結果に因って画像を出しわける
+            if (result4 === 0) {
+                $("#result_g2_pic").append('<img src="/ジャンケン用画像/keeper_1.JPG" width="400">');
+            } else {
+                $("#result_g2_pic").append('<img src="/ジャンケン用画像/keeper_2.JPG" width="400">');
+            }
+            //結果を格納する
+            if (result4 === 0) {
+                $("#cR2_1").text("×");
+                $("#cR2_2").text("×");
+                $("#cR2_3").text("×");
+                $("#cR2_4").text("×");
+                $("#cR2_5").text("×");
+                $("#cR2_6").text("×");
+            } else {
+                $("#cR2_1").text("〇");
+                $("#cR2_2").text("〇");
+                $("#cR2_3").text("〇");
+                $("#cR2_4").text("〇");
+                $("#cR2_5").text("〇");
+                $("#cR2_6").text("〇");
+            }
+        });
+
+        //キッカー３
+        //選択肢をクリックしたときに呼び出す
+        function onClickPlayerIcon5(self) {
+            //すでにselectのクラス値が与えられているHTMLエレメントのselectedを消去する
+            $(".selected5").each(function () {
+                $(this).toggleClass("selected5");
+            });
+            //クリックされたHTMLエレメントにselectedのクラス値を与える
+            $(self).toggleClass("selected5");
+        }
+
+
+        $("#result_k3").on("click", function () {
+            //乱数で0,1,2のどれかを作成する
+            const evalue5 = Math.floor(Math.random() * 3.0);
+            //自分の手として選択されている画像のファイル名を取得する
+            const pfilename5 = $(".selected5").attr("src");
+            //画像のファイル名から正規表現を用いて、数字の部分だけを抽出する
+            const pvalue5 = pfilename5.replace(/[^0-9]/g, '');
+            //数字の引き算によって勝敗を判別する
+            const result5 = (pvalue5 - evalue5);
+            //結果に因って画像を出しわける
+            if (result5 === 0) {
+                $("#result_k3_pic").append('<img src="/ジャンケン用画像/kicker_2.JPG" width="400">');
+            } else {
+                $("#result_k3_pic").append('<img src="/ジャンケン用画像/kicker_1.JPG" width="400">');
+            }
+            //結果を格納する
+            if (result5 === 0) {
+                $("#mR3_1").text("×");
+                $("#mR3_2").text("×");
+                $("#mR3_3").text("×");
+                $("#mR3_4").text("×");
+                $("#mR3_5").text("×");
+                $("#mR3_6").text("×");
+            } else {
+                $("#mR3_1").text("〇");
+                $("#mR3_2").text("〇");
+                $("#mR3_3").text("〇");
+                $("#mR3_4").text("〇");
+                $("#mR3_5").text("〇");
+                $("#mR3_6").text("〇");
+            }
+        });
+
+        //キーパー３
+        //選択肢をクリックしたときに呼び出す
+        function onClickPlayerIcon6(self) {
+            //すでにselectのクラス値が与えられているHTMLエレメントのselectedを消去する
+            $(".selected6").each(function () {
+                $(this).toggleClass("selected6");
+            });
+            //クリックされたHTMLエレメントにselectedのクラス値を与える
+            $(self).toggleClass("selected6");
+        }
+
+        $("#result_g3").on("click", function () {
+            //乱数で0,1,2のどれかを作成する
+            const evalue6 = Math.floor(Math.random() * 3.0);
+            //自分の手として選択されている画像のファイル名を取得する
+            const pfilename6 = $(".selected6").attr("src");
+            //画像のファイル名から正規表現を用いて、数字の部分だけを抽出する
+            const pvalue6 = pfilename6.replace(/[^0-9]/g, '');
+            //数字の引き算によって勝敗を判別する
+            const result6 = (pvalue6 - evalue6);
+            //結果に因って画像を出しわける
+            if (result6 === 0) {
+                $("#result_g3_pic").append('<img src="/ジャンケン用画像/keeper_1.JPG" width="400">');
+            } else {
+                $("#result_g3_pic").append('<img src="/ジャンケン用画像/keeper_2.JPG" width="400">');
+            }
+            //結果を格納する
+            if (result6 === 0) {
+                $("#cR3_1").text("×");
+                $("#cR3_2").text("×");
+                $("#cR3_3").text("×");
+                $("#cR3_4").text("×");
+                $("#cR3_5").text("×");
+                $("#cR3_6").text("×");
+            } else {
+                $("#cR3_1").text("〇");
+                $("#cR3_2").text("〇");
+                $("#cR3_3").text("〇");
+                $("#cR3_4").text("〇");
+                $("#cR3_5").text("〇");
+                $("#cR3_6").text("〇");
+            }
+        });
+
+        //最終結果を表示
+        $("#result_final").on("click", function () {
+            const r1 = $('table#finalscore td#mR1_6').text();
+            const r2 = $('table#finalscore td#mR2_6').text();
+            const r3 = $('table#finalscore td#mR3_6').text();
+            const r4 = $('table#finalscore td#cR1_6').text();
+            const r5 = $('table#finalscore td#cR2_6').text();
+            const r6 = $('table#finalscore td#cR3_6').text();
+
+            const r1_1 = r1.replace("〇", 1);
+            const r1_2 = r1_1.replace("×", 0);
+            const r2_1 = r2.replace("〇", 1);
+            const r2_2 = r2_1.replace("×", 0);
+            const r3_1 = r3.replace("〇", 1);
+            const r3_2 = r3_1.replace("×", 0);
+            const r4_1 = r4.replace("〇", 1);
+            const r4_2 = r4_1.replace("×", 0);
+            const r5_1 = r5.replace("〇", 1);
+            const r5_2 = r5_1.replace("×", 0);
+            const r6_1 = r6.replace("〇", 1);
+            const r6_2 = r6_1.replace("×", 0);
+
+            const Numr1 = Number(r1_2);
+            const Numr2 = Number(r2_2);
+            const Numr3 = Number(r3_2);
+            const Numr4 = Number(r4_2);
+            const Numr5 = Number(r5_2);
+            const Numr6 = Number(r6_2);
+
+            const TotalResult = (Numr1 + Numr2 + Numr3 - Numr4 - Numr5 - Numr6);
+
+            if (TotalResult >= 1) {
+                $("#result_final_pic").append('<img src="/ジャンケン用画像/result_2.jpg" alt="結果" width="800">');
+            } else if (TotalResult < 0) {
+                $("#result_final_pic").append('<img src="/ジャンケン用画像/result_1.JPG" width="400">');
+            } else {
+                $("#result_final_pic").append('<img src="/ジャンケン用画像/result_0.JPG" width="400">');
+            }
+        });
+
+
+    </script>
+
+</body>
+
+</html>
