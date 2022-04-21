@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <title>絶対に負けられない戦いがそこにはある</title>
 </head>
 
@@ -48,6 +49,13 @@
     </div>
 
     <!-- 選択画面 -->
+    <div class="popup" id="js-popup">
+        <div class="popup-inner">
+            <div class="close-btn" id="js-close-btn"><i class="fas fa-times"></i></div>
+            <a href="#"><img src="/ジャンケン用画像/ポップアップ画像.jpg" alt="ポップアップ画像"></a>
+        </div>
+        <div class="black-background" id="js-black-bg"></div>
+    </div>
     <div class="choice_turn_k1 section">
         <div class="choice_div">
             <!-- キッカー選択肢 -->
@@ -544,6 +552,28 @@
                 // $('.'+$(this).attr('id')).toggle();
             });
         });
+
+
+        //ポップアップ
+        function popupImage() {
+            var popup = document.getElementById('js-popup');
+            if (!popup) return;
+
+            var blackBg = document.getElementById('js-black-bg');
+            var closeBtn = document.getElementById('js-close-btn');
+            var showBtn = document.getElementById('start_btn');
+
+            closePopUp(blackBg);
+            closePopUp(closeBtn);
+            closePopUp(showBtn);
+            function closePopUp(elem) {
+                if (!elem) return;
+                elem.addEventListener('click', function () {
+                    popup.classList.toggle('is-show');
+                });
+            }
+        }
+        popupImage();
 
 
 
